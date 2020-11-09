@@ -1,6 +1,5 @@
 package com.library.runner;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -13,10 +12,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/library/step_definitions",
-        tags = "@login",
-        dryRun = true,
+        tags = "@US1_AC4",
+        dryRun =false,
         publish = false
-
 )
 
 
