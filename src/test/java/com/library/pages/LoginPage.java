@@ -13,6 +13,12 @@ public class LoginPage extends BasePage {
     @FindBy(id = "inputPassword")
     private WebElement inputPassword;
 
+    @FindBy(xpath = "//button[contains(text(),'Sign in')]" )
+    private WebElement signInButton;
+
+    @FindBy(xpath = "//div[contains(text(),'Sorry, Wrong Email or Password')]")
+    private WebElement warningMessage;
+
 
     public void login(String emailValue,String passwordValue){
 
@@ -38,6 +44,15 @@ public class LoginPage extends BasePage {
         inputEmail.sendKeys(emailValue);
         inputPassword.sendKeys(passwordValue,Keys.ENTER);
 
+    }
+
+    public String getWarningMessageText() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return warningMessage.getText().trim();
     }
 
 

@@ -36,6 +36,30 @@ public class LoginStepDefinitions {
         BrowserUtils.wait(5);
     }
 
+    ///////////////////////////////////////////////////////////////
+
+    @Then("user should see {string}")
+    public void user_should_see(String string) {
+        String actual = loginPage.getPageSubTitleText().trim();
+        Assert.assertEquals("Page title is not equal",string,actual);
+    }
+
+
+
+    @When("user logs in with {string} username and {string} password")
+    public void user_logs_in_with_username_and_password(String username, String password) {
+        loginPage.login(username,password);
+    }
+
+
+    @Then("user verifies that {string} message is displayed")
+    public void user_verifies_that_message_is_displayed(String expected) {
+
+        String actual = loginPage.getWarningMessageText().trim();
+        Assert.assertEquals(expected,actual);
+
+    }
+
 
 
 

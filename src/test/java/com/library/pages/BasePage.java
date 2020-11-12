@@ -18,6 +18,16 @@ WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
     @FindBy(xpath = "//a[@id='navbarDropdown']/span" )
     protected WebElement profileName;
 
+    @FindBy(className = "nav-link")
+    private WebElement pageSubTitle;
+
+
+    public String getPageSubTitleText(){
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(),20);
+        wait.until(ExpectedConditions.visibilityOf(pageSubTitle));
+        return pageSubTitle.getText();
+    }
+
 
     public String getProfileSubTitleText() {
 
