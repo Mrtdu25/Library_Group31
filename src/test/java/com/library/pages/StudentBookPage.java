@@ -34,9 +34,9 @@ public class StudentBookPage extends LoginPage{
             String text = book.getText();
             System.out.println(text);
             BrowserUtils.wait(1);
-            Assert.assertTrue(book.isDisplayed());
+           
         }
-
+            Assert.assertTrue(book.isDisplayed());
 
 
     }
